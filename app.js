@@ -39,3 +39,31 @@ var car = "BMW";
 console.log(car);
 car = { brand: "BMW", series: 3 };
 console.log(car);
+// functions
+function returnMyName() {
+    // return myAge;
+    return myName;
+}
+console.log(returnMyName());
+// function expression
+var returnMyName2 = function () {
+    return myName;
+};
+console.log(returnMyName2());
+// void
+function sayHello() {
+    console.log("Hello");
+    // return myName;
+}
+// argument types
+function multiply(value1, value2) {
+    return value1 * value2;
+}
+// console.log(multiply(2, 'Steve'));
+console.log(multiply(2, 10));
+// function types
+var myMultiply;
+// myMultiply = sayHello;
+// myMultiply();
+myMultiply = multiply;
+console.log(myMultiply(5, 2));

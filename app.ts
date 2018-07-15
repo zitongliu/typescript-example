@@ -44,3 +44,38 @@ let car: any = "BMW";
 console.log(car);
 car = { brand: "BMW", series: 3 };
 console.log(car);
+
+
+// functions
+function returnMyName(): string {
+    // return myAge;
+    return myName;
+}
+console.log(returnMyName());
+
+// function expression
+const returnMyName2 = (): string => {
+    return myName;
+}
+console.log(returnMyName2());
+
+// void
+function sayHello(): void {
+    console.log("Hello");
+    // return myName;
+}
+
+// argument types
+function multiply(value1: number, value2: number): number {
+    return value1 * value2;
+}
+
+// console.log(multiply(2, 'Steve'));
+console.log(multiply(2, 10));
+
+// function types
+let myMultiply: (val1: number, val2: number) => number;
+// myMultiply = sayHello;
+// myMultiply();
+myMultiply = multiply;
+console.log(myMultiply(5, 2));
