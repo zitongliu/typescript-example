@@ -1,26 +1,26 @@
 "use strict";
 //string
 var myName = "Steve";
-// myName = 28; 
+// myName = 28; // error
 // number
 var myAge = 99.99;
-// myAge = 'Steve';
+// myAge = 'Steve'; // error
 // boolean
 var hasHobbies = true;
-// hasHobbies = 1;
+// hasHobbies = 1; // error
 // assign types
 var myRealAge;
 myRealAge = 99;
-// myRealAge = '99';
+// myRealAge = '99'; // error
 // array
 var hobbies = ["cooking", "sports"];
 console.log(typeof hobbies);
 hobbies = [100];
-// hobbies = 100;
+// hobbies = 100; // error
 // tuples
-// let address = ["Superstreet", 99];
+var address2 = ["Superstreet", 99];
 var address = ["Superstreet", 99];
-// let address: [string, number] = [99, "Superstreet"];
+// let address: [string, number] = [99, "Superstreet"]; // error
 // enum
 var Color;
 (function (Color) {
@@ -41,7 +41,7 @@ car = { brand: "BMW", series: 3 };
 console.log(car);
 // functions
 function returnMyName() {
-    // return myAge;
+    // return myAge; // error
     return myName;
 }
 console.log(returnMyName());
@@ -53,17 +53,42 @@ console.log(returnMyName2());
 // void
 function sayHello() {
     console.log("Hello");
-    // return myName;
+    // return myName; // error
 }
 // argument types
 function multiply(value1, value2) {
     return value1 * value2;
 }
-// console.log(multiply(2, 'Steve'));
+// console.log(multiply(2, 'Steve')); // error
 console.log(multiply(2, 10));
 // function types
 var myMultiply;
-// myMultiply = sayHello;
-// myMultiply();
+// myMultiply = sayHello; // error
+// myMultiply(); // error
 myMultiply = multiply;
 console.log(myMultiply(5, 2));
+// objects
+var userDate2 = {
+    name: "Steve",
+    age: 99,
+};
+var userDate = {
+    name: "Steve",
+    age: 99,
+};
+// userDate = {}; // error
+/*
+userData = {
+    a: "Hello",
+    b: 22
+}
+// errors as well - name of the properties must match
+*/
+// complex object
+var complex = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+// complex = {};   // error
