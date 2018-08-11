@@ -113,3 +113,55 @@ let complex: { data: number[], output: (all: boolean) => number[] } = {
 }
 
 // complex = {};   // error
+
+// Type Aliases
+
+type Complex = { data: number[], output: (all: boolean) => number[] };
+
+let complex2: Complex = {
+    data: [100, 3.99, 10],
+
+    output: function (all: boolean): number[] {
+        return this.data;
+    }
+};
+
+
+// Allowing multiple types with Union Types
+
+let myRealRealAge: number | string = 27;
+myRealRealAge = "27";
+// myRealRealAge = true;    // error
+
+// Check types during runtime
+// let finalValue = "A string";
+let finalValue = 26;
+if (typeof finalValue == "number") {
+    console.log("FinalValue is a number")
+}
+
+
+// never type
+
+// This function neber returns anything as it throws an error;
+function neverReturns():never {
+    throw new Error('An error!');
+}
+
+
+// Niullable Types
+
+//  Errors when we turn strictNullCheck on in tsconfig.
+// let canBeNull = 12;
+// canBeNull = null;
+// let canAlsoBeNull;
+// cajAlsoBeNull = null;
+
+let canBeNull: number | null = 12;
+canBeNull = null;
+
+// Assigning null initially don't give error
+// This is assumed to be of type null and not of type any
+let canThisBeAny = null;
+
+

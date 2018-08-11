@@ -91,4 +91,35 @@ var complex = {
         return this.data;
     }
 };
-// complex = {};   // error
+var complex2 = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+// Allowing multiple types with Union Types
+var myRealRealAge = 27;
+myRealRealAge = "27";
+// myRealRealAge = true;    // error
+// Check types during runtime
+// let finalValue = "A string";
+var finalValue = 26;
+if (typeof finalValue == "number") {
+    console.log("FinalValue is a number");
+}
+// never type
+// This function neber returns anything as it throws an error;
+function neverReturns() {
+    throw new Error('An error!');
+}
+// Niullable Types
+//  Errors when we turn strictNullCheck on in tsconfig.
+// let canBeNull = 12;
+// canBeNull = null;
+// let canAlsoBeNull;
+// cajAlsoBeNull = null;
+var canBeNull = 12;
+canBeNull = null;
+// Assigning null initially don't give error
+var canThisBeAny;
+canThisBeAny = 12;
