@@ -165,3 +165,23 @@ canBeNull = null;
 let canThisBeAny = null;
 
 
+// Example
+
+type bankAccountDef = {money: number, deposit: (value: number) => void };
+
+let bankAccount: bankAccountDef = {
+    money: 2000,
+    deposit(value: number): void {
+        this.money += value;
+    }
+};
+
+let myself: {name: string, bankAccount: bankAccountDef, hobbies: string[]} = {
+    name: "Steve",
+    bankAccount: bankAccount,
+    hobbies: ["Sports", "Cooking"]
+};
+
+myself.bankAccount.deposit(3000);
+
+console.log(myself);

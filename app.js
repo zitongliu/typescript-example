@@ -121,5 +121,18 @@ function neverReturns() {
 var canBeNull = 12;
 canBeNull = null;
 // Assigning null initially don't give error
-var canThisBeAny;
-canThisBeAny = 12;
+// This is assumed to be of type null and not of type any
+var canThisBeAny = null;
+var bankAccount = {
+    money: 2000,
+    deposit: function (value) {
+        this.money += value;
+    }
+};
+var myself = {
+    name: "Steve",
+    bankAccount: bankAccount,
+    hobbies: ["Sports", "Cooking"]
+};
+myself.bankAccount.deposit(3000);
+console.log(myself);
