@@ -25,3 +25,24 @@ console.log(person.name);
 console.log(person.username);
 
 person.printAge();
+
+
+// Inheritance
+
+class Steve extends Person {
+    name = "Steve Liu"; // overwrites name in Person class
+}
+
+
+const steve = new Steve("Anna", "steve_username"); // results in Steve Liu. content of current class always overwrites contents of super class. We could avoid this by having a constructor in Steve
+console.log(steve)
+
+class Daniel extends Person {
+    constructor(username: string) {
+        super("Daniel", username);
+        this.age = 99;
+    }
+}
+
+const daniel = new Daniel('daniel_liu');
+console.log(daniel)
