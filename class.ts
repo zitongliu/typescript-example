@@ -46,3 +46,31 @@ class Daniel extends Person {
 
 const daniel = new Daniel('daniel_liu');
 console.log(daniel)
+
+
+// Getters & Setters
+
+class Plant {
+    private _species: string = 'Default';
+
+    get species() {
+        return this._species;
+    }
+
+    set species(value: string) {
+        if (value.length > 3) {
+            this._species = value;
+        } else {
+            this._species = 'Default'
+        }
+    }   
+}
+
+const plant = new Plant();
+console.log(plant);
+console.log(plant.species);
+plant.species = "AB";
+console.log(plant.species);
+plant.species = "Green Plant";
+console.log(plant.species);
+
