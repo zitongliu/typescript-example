@@ -115,7 +115,11 @@ console.log(newProject);
 class OnlyOne {
     private static instance: OnlyOne;
 
-    private constructor(public name: string) {}
+    // private constructor(public name: string) {}
+
+    // read only
+    private constructor(public readonly name: string) {}
+
 
     static getInstance() {
         if (!OnlyOne.instance) {
@@ -127,3 +131,12 @@ class OnlyOne {
 
 // let wrong = new OnlyOne('The Only One');
 let right = OnlyOne.getInstance();
+console.log(right.name);
+
+// Errors as its read only
+// right.name = 'Something else';
+// console.log(right.name);
+
+
+
+

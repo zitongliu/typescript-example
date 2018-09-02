@@ -122,6 +122,8 @@ newProject.changeName('My IT Project');
 console.log(newProject);
 // private constructors
 var OnlyOne = /** @class */ (function () {
+    // private constructor(public name: string) {}
+    // read only
     function OnlyOne(name) {
         this.name = name;
     }
@@ -135,4 +137,8 @@ var OnlyOne = /** @class */ (function () {
 }());
 // let wrong = new OnlyOne('The Only One');
 var right = OnlyOne.getInstance();
+console.log(right.name);
+// Errors as its read only
+// right.name = 'Something else';
+// console.log(right.name);
 //# sourceMappingURL=class.js.map
