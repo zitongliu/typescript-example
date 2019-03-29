@@ -1,4 +1,6 @@
 
+// Interfaces get totally ignored when we complie ts into js. They are only here to give error before or during compliation
+
 interface NamedPerson {
     firstName: string;
     age?: number; // optional
