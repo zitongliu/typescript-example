@@ -38,4 +38,9 @@ greet(developerInstance);
 developerInstance.greet("Sample");
 developerInstance.lastName = "Anything";
 developerInstance.greet(developerInstance.lastName);
+var myDoubleFunction;
+myDoubleFunction = function (value1, value2) {
+    return (value1 + value2) * 2;
+};
+console.log(myDoubleFunction(10, 20));
 //# sourceMappingURL=interfaces.js.map
