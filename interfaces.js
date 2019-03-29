@@ -22,4 +22,20 @@ var personInstance = {
 changeName(personInstance);
 greet(personInstance);
 personInstance.greet("Liu");
+var Developer = /** @class */ (function () {
+    function Developer() {
+        this.firstName = "";
+        this.lastName = "";
+    }
+    Developer.prototype.greet = function (lastName) {
+        console.log("Hi, I am " + this.firstName + " " + lastName);
+    };
+    return Developer;
+}());
+var developerInstance = new Developer();
+developerInstance.firstName = "Sam";
+greet(developerInstance);
+developerInstance.greet("Sample");
+developerInstance.lastName = "Anything";
+developerInstance.greet(developerInstance.lastName);
 //# sourceMappingURL=interfaces.js.map

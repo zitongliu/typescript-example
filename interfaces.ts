@@ -35,3 +35,19 @@ changeName(personInstance);
 greet(personInstance);
 personInstance.greet("Liu");
 
+
+class Developer implements NamedPerson {
+    firstName: string = "";
+    lastName: string = "";
+    greet(lastName: string) {
+        console.log("Hi, I am " + this.firstName + " " + lastName);
+    }
+}
+
+const developerInstance = new Developer();
+developerInstance.firstName = "Sam";
+greet(developerInstance);
+developerInstance.greet("Sample");
+developerInstance.lastName = "Anything";
+developerInstance.greet(developerInstance.lastName);
+
