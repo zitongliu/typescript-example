@@ -1,4 +1,5 @@
 "use strict";
+// Interfaces get totally ignored when we complie ts into js. They are only here to give error before or during compliation
 function greet(person) {
     console.log("Hello, " + person.firstName);
 }
