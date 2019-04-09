@@ -38,3 +38,31 @@ class Monster {
 
 const someMonster = new Monster();
 (<any>someMonster).print();
+
+
+// Method decorator
+function editable(value: boolean) {
+    return function(target: any, propName: String, descriptor: PropertyDescriptor) {
+        descriptor.writable = value;
+    }
+}
+
+class Bank {
+    accountName: string;
+
+    constructor(name: string) {
+        this.accountName = name;
+    }
+
+    @editable(false)
+    getBalance() {
+        console.log(1000);
+    }
+}
+
+const account = new Bank("Steve Account");
+account.getBalance();
+// account.getBalance = function() {
+//     console.log(2000);
+// }
+// account.getBalance();

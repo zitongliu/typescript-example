@@ -48,4 +48,28 @@ var Monster = /** @class */ (function () {
 }());
 var someMonster = new Monster();
 someMonster.print();
+// Method decorator
+function editable(value) {
+    return function (target, propName, descriptor) {
+        descriptor.writable = value;
+    };
+}
+var Bank = /** @class */ (function () {
+    function Bank(name) {
+        this.accountName = name;
+    }
+    Bank.prototype.getBalance = function () {
+        console.log(1000);
+    };
+    __decorate([
+        editable(false)
+    ], Bank.prototype, "getBalance", null);
+    return Bank;
+}());
+var account = new Bank("Steve Account");
+account.getBalance();
+// account.getBalance = function() {
+//     console.log(2000);
+// }
+// account.getBalance();
 //# sourceMappingURL=decorators.js.map
